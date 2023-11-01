@@ -23,3 +23,33 @@ const maxCharacter = (input) => {
 };
 
 console.log(maxCharacter(matrix));
+function largestOfFour(arr) {
+  let arrayOfMaxValues = [];
+  for (let i = 0; i < arr.length; i++) {
+      let subArr = arr[i];
+      let maxSubArrVal = 0;
+      for (let j = 0; j < subArr.length; j++) {
+          let currentValue = subArr[j];
+          if (currentValue > maxSubArrVal) {
+            maxSubArrVal = currentValue;
+          }
+      }
+      arrayOfMaxValues.push(maxSubArrVal);
+  }
+  return  arrayOfMaxValues;
+}
+
+// вариант с forEach
+function largestOfFour(arr) {
+  let arrayOfMaxValues = [];
+  arr.forEach(subArr => {
+     let maxSubArrVal = 0;
+     subArr.forEach(item => {
+        if (item > maxSubArrVal) {
+            maxSubArrVal = item;
+        }
+     });
+     arrayOfMaxValues.push(maxSubArrVal);
+  });
+  return  arrayOfMaxValues;
+}
