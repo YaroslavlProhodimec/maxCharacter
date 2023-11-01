@@ -53,3 +53,9 @@ function largestOfFour(arr) {
   });
   return  arrayOfMaxValues;
 }
+Мы можем использовать метод Math.max(...spreadOperator) с методом array.map() для циклического перебора каждого элемента во внешнем массиве, возврата максимального значения из вложенного массива и прямого возврата этого вновь созданного массива.
+
+
+function largestOfFour(arr) {
+  return arr.map(subArr => Math.max(...subArr));
+}
